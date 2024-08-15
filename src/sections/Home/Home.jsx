@@ -188,7 +188,7 @@
 
 // export default Home;
 import { useState, useEffect, lazy, Suspense } from "react";
-import { useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
 import { About } from "../sections";
 
@@ -203,14 +203,9 @@ import backgroundVideo from "./video.mp4";
 
 // Preload critical assets
 const preloadAssets = () => {
-  const link = document.createElement("link");
-  link.rel = "preload";
-  link.as = "image";
-  link.href = logo;
-  document.head.appendChild(link);
-
+  const logoImg = new Image();
+  logoImg.src = logo;
   const video = document.createElement("video");
-  video.preload = "auto";
   video.src = backgroundVideo;
 };
 
@@ -240,9 +235,15 @@ const Home = () => {
 
   return (
     <>
-      <section id="accueil" className="relative h-screen overflow-hidden">
+      <motion.section
+        id="accueil"
+        className="relative h-screen overflow-hidden"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1.5 }}
+      >
         {!videoError && (
-          <video
+          <motion.video
             autoPlay
             loop
             muted
@@ -250,51 +251,71 @@ const Home = () => {
             className="absolute inset-0 w-full h-full object-cover"
             onLoadedData={handleVideoLoad}
             onError={handleVideoError}
-            style={{ transform: `translateY(${y}px)` }}
+            style={{ y, willChange: "transform" }}
           >
             <source src={backgroundVideo} type="video/mp4" />
             Your browser does not support the video tag.
-          </video>
+          </motion.video>
         )}
         {(!videoLoaded || videoError) && (
-          <div
+          <motion.div
             className="absolute inset-0 bg-cover bg-center"
             style={{
               backgroundImage: `url(${restauImg})`,
               backgroundPosition: "center center",
               backgroundRepeat: "no-repeat",
               backgroundSize: "cover",
-              transform: `translateY(${y}px)`,
+              y,
+              willChange: "transform",
             }}
           />
         )}
         <div className="absolute inset-0 bg-black opacity-60" />
 
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
-          <div
+          <motion.div
             className="bg-black/30 backdrop-blur-sm py-8 sm:py-12 px-6 sm:px-16 rounded-lg max-w-3xl w-full mx-auto my-auto
               landscape:mt-16 landscape:mb-4
               portrait:my-auto
               iphone678-landscape:mt-24
               iphone678plus-landscape:mt-20
               iphonex-landscape:mt-16"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
           >
-            <img
+            <motion.img
               src={logo}
               alt="Mariposa Logo"
               className="w-24 sm:w-28 md:w-32 lg:w-40 mx-auto 
                 landscape:w-60 h-32 
                 portrait:w-60"
-              loading="eager"
+              initial={{ scale: 0, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 15,
+                delay: 0.2,
+              }}
+              style={{ willChange: "transform, opacity" }}
             />
 
-            <div
+            <motion.div
               className="w-16 sm:w-20 md:w-24 lg:w-24 h-1 bg-[#e7c86e] mx-auto my-4 sm:my-6
                 landscape:w-16 landscape:my-3
                 portrait:w-20 portrait:my-6"
+              initial={{ scaleX: 0 }}
+              animate={{ scaleX: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+              style={{ willChange: "transform" }}
             />
 
-            <div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.5, duration: 0.5 }}
+            >
               <Link
                 to="/menu"
                 className="inline-flex font-cinzel items-center px-4 sm:px-6 md:px-8 py-2 sm:py-3 md:py-4 text-sm sm:text-base md:text-lg font-medium text-white border-2 border-[#e7c86e] rounded-none hover:bg-[#e7c86e] hover:text-black transition-all duration-300 ease-in-out uppercase tracking-wider
@@ -302,7 +323,7 @@ const Home = () => {
                   portrait:text-base portrait:px-6 portrait:py-3"
               >
                 Découvrez notre menu
-                <svg
+                <motion.svg
                   className="w-4 sm:w-5 md:w-6 h-4 sm:h-5 md:h-6 ml-2 sm:ml-3
                     landscape:w-4 landscape:h-4
                     portrait:w-5 portrait:h-5"
@@ -310,6 +331,9 @@ const Home = () => {
                   stroke="currentColor"
                   viewBox="0 0 24 24"
                   xmlns="http://www.w3.org/2000/svg"
+                  initial={{ x: -5, opacity: 0 }}
+                  animate={{ x: 0, opacity: 1 }}
+                  transition={{ delay: 2, duration: 0.5 }}
                 >
                   <path
                     strokeLinecap="round"
@@ -317,12 +341,12 @@ const Home = () => {
                     strokeWidth={2}
                     d="M14 5l7 7m0 0l-7 7m7-7H3"
                   />
-                </svg>
+                </motion.svg>
               </Link>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       <About />
 
