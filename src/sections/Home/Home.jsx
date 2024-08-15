@@ -190,11 +190,11 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { Link } from "react-router-dom";
-import { About } from "../sections";
 
 // Lazy load non-critical components
-const Gallery = lazy(() => import("../Gallery/Gallery"));
-const Contact = lazy(() => import("../Contact/Contact"));
+const About = lazy(() => import("../sections/About"));
+const Gallery = lazy(() => import("../sections/Gallery"));
+const Contact = lazy(() => import("../sections/Contact"));
 
 // Import assets
 import restauImg from "../../imgs/parkimg.jpg";
@@ -271,25 +271,25 @@ const Home = () => {
           />
         )}
         <div className="absolute inset-0 bg-black opacity-60" />
-
         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
           <motion.div
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.5 }}
             className="bg-black/30 backdrop-blur-sm py-8 sm:py-12 px-6 sm:px-16 rounded-lg max-w-3xl w-full mx-auto my-auto
               landscape:mt-16 landscape:mb-4
               portrait:my-auto
               iphone678-landscape:mt-24
               iphone678plus-landscape:mt-20
               iphonex-landscape:mt-16"
-            initial={{ opacity: 0, y: 50 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.5 }}
+            style={{ willChange: "opacity, transform" }}
           >
             <motion.img
               src={logo}
               alt="Mariposa Logo"
               className="w-24 sm:w-28 md:w-32 lg:w-40 mx-auto 
-                landscape:w-60 h-32 
-                portrait:w-60"
+             landscape:w-60 h-32 
+             portrait:w-60"
               initial={{ scale: 0, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               transition={{
@@ -307,14 +307,14 @@ const Home = () => {
                 portrait:w-20 portrait:my-6"
               initial={{ scaleX: 0 }}
               animate={{ scaleX: 1 }}
-              transition={{ duration: 1, delay: 1 }}
+              transition={{ duration: 1, delay: 2 }}
               style={{ willChange: "transform" }}
             />
-
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 1.5, duration: 0.5 }}
+              transition={{ delay: 2.5, duration: 0.5 }}
+              style={{ willChange: "opacity, transform" }}
             >
               <Link
                 to="/menu"
@@ -333,7 +333,8 @@ const Home = () => {
                   xmlns="http://www.w3.org/2000/svg"
                   initial={{ x: -5, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: 2, duration: 0.5 }}
+                  transition={{ delay: 3, duration: 0.5 }}
+                  style={{ willChange: "transform, opacity" }}
                 >
                   <path
                     strokeLinecap="round"
@@ -348,20 +349,8 @@ const Home = () => {
         </div>
       </motion.section>
 
-      <About />
-
-      <Suspense
-        fallback={
-          <div className="p-4 text-center">
-            <h2 className="text-2xl font-bold">
-              Loading additional content...
-            </h2>
-            <p className="mt-2">
-              Please wait while we prepare the rest of your experience.
-            </p>
-          </div>
-        }
-      >
+      <Suspense fallback={<div>Loading...</div>}>
+        <About />
         <Gallery />
         <Contact />
       </Suspense>
