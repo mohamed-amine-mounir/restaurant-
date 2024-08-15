@@ -198,7 +198,7 @@ const Contact = lazy(() => import("../Contact/Contact"));
 
 // Import assets
 import restauImg from "../../imgs/parkimg.jpg";
-import logo from "./logo-removebg.png";
+import logo from "./logo-removebg.webp";
 import backgroundVideo from "./video.mp4";
 
 // Preload critical assets
