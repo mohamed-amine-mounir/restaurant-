@@ -40,7 +40,7 @@
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import restauImg from "../../imgs/parkimg.jpg";
-import logo from "./logo-removebg.webp";
+import logo from "./logo-removebg.png";
 import backgroundVideo from "./video.mp4"; // Ensure this path is correct
 import { About, Gallery, Contact } from "../sections";
 import { Link } from "react-router-dom";
