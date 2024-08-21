@@ -12,14 +12,14 @@ const Footer = () => {
 
         <div className="flex justify-center space-x-6 mb-6">
           <a
-            href="https://www.facebook.com/parkalakhawin"
+            href="https://www.facebook.com/"
             className="text-[#e7c86e] hover:text-white transition duration-300"
             target="_blank"
           >
             <FaFacebookF size={24} />
           </a>
           <a
-            href="https://www.instagram.com/park_alakhawin?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            href="https://www.instagram.com/"
             className="text-[#e7c86e] hover:text-white transition duration-300"
             target="_blank"
           >
