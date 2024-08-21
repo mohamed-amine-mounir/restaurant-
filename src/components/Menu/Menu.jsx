@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import chef from "../../imgs/cheff.jpeg";
+import chef from "./2_SLIDER-7-400x400.jpg";
 import {
   FaCoffee,
   FaBeer,
@@ -72,7 +72,7 @@ const Menu = () => {
         { name: "FRAISE", price: "18 MAD" },
         { name: "ANACHÉ", price: "20 MAD" },
         { name: "JUS FRUIT DE SAISON", price: "20 MAD" },
-        { name: "JUS MARIPOSA BARISTA", price: "25 MAD" },
+        { name: "JUS BARISTA", price: "25 MAD" },
       ],
     },
     {

@@ -3,12 +3,12 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
-import image2 from "../../imgs/plat2.jpg";
-import image3 from "../../imgs/plat3.jpg";
-import image4 from "../../imgs/plat4.jpg";
-import image6 from "../../imgs/plat6.jpg";
-import image11 from "../../imgs/plat11.jpg";
-import image12 from "../../imgs/plat12.jpg";
+import image2 from "../../imgs/plat1.png";
+import image3 from "../../imgs/plat2.png";
+import image4 from "../../imgs/plat3.png";
+import image6 from "../../imgs/plat4.png";
+import image11 from "../../imgs/plat1.png";
+import image12 from "../../imgs/plat2.png";
 const About = () => {
   const sliderRef = useRef(null);
 

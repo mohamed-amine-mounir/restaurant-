@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import hoteil2 from "../../imgs/hotal.jpg";
-import hoteil3 from "../../imgs/hoteil3.jpg";
-import hoteil5 from "../../imgs/hoteil5.jpg";
+import hoteil2 from "./HOTEL.avif";
+import hoteil3 from "./HOTEL2.avif";
+import hoteil5 from "./HOTEIL3.jpg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faGasPump,
@@ -107,7 +107,7 @@ const Hotel = () => {
               className="inline-flex items-center justify-center w-full sm:w-auto bg-[#e7c86e] text-white py-2 px-6 rounded-lg hover:bg-[#e7c96eac] transition duration-300 ease-in-out shadow-md hover:shadow-lg text-base"
             >
               <FontAwesomeIcon icon={faPhone} className="mr-2" />
-              Appelez maintenant : +212 5 23 56 48 51
+              Appelez maintenant : +212 5 00 00 00 00
             </a>
           </div>
         </div>

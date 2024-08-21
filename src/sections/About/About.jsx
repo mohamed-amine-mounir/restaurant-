@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import parkImage from "../../imgs/insideclassy.jpeg";
+import parkImage from "./5-650x650.png";
 import { ServicesAndAmenities } from "../sections";
 import { Link } from "react-router-dom";
 const About = () => {
@@ -28,37 +28,28 @@ const About = () => {
             </div>
             <div className="md:w-1/2 md:pl-12 text-center lg:text-start">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-[#bc906b] mb-4 ">
-                Al Akhawin Park
+                AURUM
               </h2>
-              {/* <p className="texxt-lg lg:text-2xl text-gray-600 mb-6 font-sans leading-relaxed ">
-                Une cuisine généreuse et gourmande, 100% épicurienne et
-                végétarienne.
-              </p>{" "} */}
+
               <motion.p
                 className="text-base lg:text-lg mb-6 leading-relaxed text-[#4a4a4ace] font-lora "
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
               >
-                Bienvenue à Al Akhawin Park, votre oasis de détente et de
-                gastronomie à Khouribga ! Notre complexe multiservices allie
-                charme marocain et confort moderne. Savourez notre cuisine
-                traditionnelle, végétalienne et nos menus enfants sur notre
-                belle terrasse. Profitez de nos services variés :
-                station-service, café, hôtel, espace enfant, fitness et spa.
-                Nous offrons réservations, plats à emporter, livraisons, et
-                accessibilité pour tous. Al Akhawin Park, c&aposest
-                l&aposendroit idéal pour une pause gourmande, un séjour relaxant
-                ou une célébration mémorable. Venez vivre l&aposhospitalité
-                marocaine dans un cadre chaleureux où chaque moment devient
-                spécial. Notre équipe passionnée vous attend pour une expérience
-                inoubliable !
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                Molestias, consequuntur sunt voluptatum illum quaerat commodi
+                eum quisquam fuga a ea. Lorem, ipsum dolor sit amet consectetur
+                adipisicing elit. Molestias, consequuntur sunt voluptatum illum
+                quaerat commodi eum quisquam fuga a ea. Lorem, ipsum dolor sit
+                amet consectetur adipisicing elit. Molestias, consequuntur sunt
+                voluptatum illum quaerat commodi eum quisquam fuga a ea.
               </motion.p>
 
               <div className="flex space-x-4 justify-center lg:justify-start">
                 <Link to="/menu">
                   <button className="bg-white text-[#bc906b] px-6 py-2 rounded-md font-sans text-sm uppercase tracking-wider hover:text-white hover:bg-[#bc906b] transition duration-300 border border-[#bc906b]">
-                    Menu Akhawin
+                    Menu Aurum
                   </button>
                 </Link>
                 <Link to="/reservation">

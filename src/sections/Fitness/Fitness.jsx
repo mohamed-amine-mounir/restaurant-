@@ -15,7 +15,7 @@ const Fitness = () => {
       <animated.div style={fadeIn}>
         <header className="text-center mb-12">
           <h1 className="text-4xl font-extrabold tracking-tight text-[#bc906b]">
-            ALAKHAWAYN
+            AURUM
           </h1>
           <h2 className="text-3xl font-bold mt-2 text-gray-600">FITNESS</h2>
         </header>
@@ -27,7 +27,7 @@ const Fitness = () => {
           <p className="text-xl lg:text-lg text-gray-600 my-4 text-center hover:text-[#bc906b] w-fit m-auto ">
             <Link to="tel:+212523564851">
               <Phone className="inline mr-2 text-[rgb(188,144,107)] text-nowrap " />
-              +212 523 564 851
+              +212 00 00 00 00
             </Link>
           </p>
 

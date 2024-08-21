@@ -1,45 +1,6 @@
-// import { useEffect } from "react";
-// import restauImg from "../../imgs/parkimg.jpg";
-// import logo from "./logo-removebg.png";
-// import { About, Gallery, Contact } from "../sections";
-// import { Link } from "react-router-dom";
-// import { motion, useScroll, useTransform } from "framer-motion";
-
-// const Home = () => {
-//   const { scrollY } = useScroll();
-//   const y = useTransform(scrollY, [0, 500], [0, 250]);
-
-//   useEffect(() => {
-//     document.body.style.overflowX = "hidden";
-//     return () => {
-//       document.body.style.overflowX = "auto";
-//     };
-//   }, []);
-
-//   return (
-//     <>
-//       <motion.section
-//         id="accueil"
-//         className="relative h-screen overflow-hidden"
-//         initial={{ opacity: 0 }}
-//         animate={{ opacity: 1 }}
-//         transition={{ duration: 1.5 }}
-//       >
-//         <motion.div
-//           className="absolute inset-0 bg-cover bg-center"
-//           style={{
-//             backgroundImage: `url(${restauImg})`,
-//             backgroundPosition: "center center",
-//             backgroundRepeat: "no-repeat",
-//             backgroundSize: "cover",
-//             y,
-//           }}
-//         />
-//         <div className="absolute inset-0 bg-black opacity-60" />
-//         <div className="relative z-10 h-full flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8">
 import { useState, useEffect } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import restauImg from "../../imgs/parkimg.jpg";
+import restauImg from "./restau.jpg";
 import logo from "./logo-removebg.png";
 import backgroundVideo from "./video.mp4"; // Ensure this path is correct
 import { About, Gallery, Contact } from "../sections";

@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-center mb-6">
           <h2 className="text-[#e7c86e] font-cinzel bg-clip-text bg-gradient-to-r from-[#c59d5f] to-[#f1c40f] text-2xl sm:text-3xl font-light tracking-widest mb-1">
-            PARK ALAKHAWIN
+            AURUM
           </h2>
         </div>
 
@@ -29,13 +29,11 @@ const Footer = () => {
 
         <div className="flex justify-center items-center mb-6">
           <FaMapMarkerAlt size={20} className="mr-2 text-white" />
-          <p className="text-white">Al Akhawin Park R403, Khouribga</p>
+          <p className="text-white">AURUM R000?, Khouribga</p>
         </div>
 
         <div className="text-center text-sm">
-          <p>
-            &copy; {new Date().getFullYear()} Mariposa. All rights reserved.
-          </p>
+          <p>&copy; {new Date().getFullYear()} AURUM. All rights reserved.</p>
         </div>
       </div>
     </footer>

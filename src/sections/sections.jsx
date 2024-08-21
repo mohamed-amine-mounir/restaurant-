@@ -6,7 +6,4 @@ export { default as Contact } from "./Contact/Contact";
 export { default as Footer } from "./Footer/Footer";
 export { default as Fitness } from "./Fitness/Fitness";
 export { default as Hotel } from "./Hotel/Hotel";
-export { default as Restaurant } from "./Restaurant/Restaurant";
 export { default as ServicesAndAmenities } from "./ServicesAndAmenities/ServicesAndAmenities";
-
-export { default as EspaceEnfant } from "./EspaceEnfant/EspaceEnfant";

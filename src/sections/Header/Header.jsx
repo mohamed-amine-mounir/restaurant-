@@ -55,7 +55,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <Link to="/" className="flex items-center">
             <motion.h1 className="text-3xl font-cinzel tracking-widest bg-clip-text text-transparent bg-gradient-to-r from-[#c59d5f] to-[#f1c40f]">
-              AL AKHAWIN
+              AURUM
             </motion.h1>
           </Link>
 

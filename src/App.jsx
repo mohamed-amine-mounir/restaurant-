@@ -6,8 +6,6 @@ import {
   Footer,
   Hotel,
   Fitness,
-  Restaurant,
-  EspaceEnfant,
 } from "./sections/sections";
 import { Menu, Reservation, ScrollToTop } from "./components/components";
 
@@ -24,9 +22,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/hotel" element={<Hotel />} />
           <Route path="/fitness" element={<Fitness />} />
-          <Route path="/restaurant" element={<Restaurant />} />
-
-          <Route path="/espace-enfant" element={<EspaceEnfant />} />
         </Routes>
         <Footer />
       </div>

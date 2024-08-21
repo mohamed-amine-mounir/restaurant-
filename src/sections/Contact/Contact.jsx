@@ -1,5 +1,6 @@
 import { IoLocationSharp, IoCall, IoTime, IoMail } from "react-icons/io5";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 
 const Contact = () => {
   return (
@@ -21,14 +22,14 @@ const Contact = () => {
         >
           <div className="w-full lg:w-1/2 h-[300px] sm:h-[400px] lg:h-auto">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3349.5527091836607!2d-6.906561925239863!3d32.909992477180126!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xda69dfda1f7d5b9%3A0xb9c2a924b77a8036!2sAl%20Akhawin%20Park!5e0!3m2!1sfr!2sma!4v1723289184409!5m2!1sfr!2sma"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d41996.70688981254!2d2.28711313190175!3d48.862135027830654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e66fbf77bf3879%3A0x5c98bdcea603dee7!2sTo%20Restaurant%20Paris!5e0!3m2!1sfr!2sma!4v1724224892845!5m2!1sfr!2sma"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Al Akhawin Park Location"
+              title="Google Maps"
             ></iframe>
           </div>
           <div className="w-full lg:w-1/2 bg-white p-8 lg:p-12 flex flex-col justify-center">
@@ -39,14 +40,14 @@ const Contact = () => {
               <ContactItem
                 icon={IoLocationSharp}
                 title="Notre adresse"
-                content="Al Akhawin Park R403, Khouribga"
-                link="https://maps.app.goo.gl/Hq4e3TWjYgGAhtT58"
+                content="aurum R403, Khouribga"
+                link="https://maps.app.goo.gl/dkeqpQN2vv2w4rni9"
               />
               <ContactItem
                 icon={IoCall}
                 title="Appelez-nous"
-                content="+212523564851"
-                link="tel:+212523564851"
+                content="+212000000"
+                link="tel:+21200000"
               />
               <ContactItem
                 icon={IoTime}
@@ -55,9 +56,9 @@ const Contact = () => {
               />
               <ContactItem
                 icon={IoMail}
-                title="contact nous"
-                content="contact@park-alkhawin.ma"
-                link="mailto:contact@park-alkhawin.ma"
+                title="Contactez-nous"
+                content="contact@park-aurum.ma"
+                link="mailto:contact@park-aurum.ma"
               />
             </div>
           </div>
@@ -90,5 +91,12 @@ const ContactItem = ({ icon: Icon, title, content, link }) => (
     </div>
   </motion.div>
 );
+
+ContactItem.propTypes = {
+  icon: PropTypes.elementType.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+  link: PropTypes.string,
+};
 
 export default Contact;
